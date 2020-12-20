@@ -1,0 +1,785 @@
+@font-face {
+font-family: 'FontAwesome';
+src: url('../fonts/fontawesome-webfont.eot');
+src: url('../fonts/fontawesome-webfont.eot') format('embedded-opentype'),
+url('../fonts/fontawesome-webfont.woff') format('woff'),
+url('../fonts/fontawesome-webfont.ttf') format('truetype'),
+url('../fonts/fontawesome-webfont.svg') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+font-family:'RobotoBlack';
+src:url('../fonts/Roboto-Black.ttf') format('truetype');
+}
+@font-face {
+font-family: 'RobotoMedium';
+src:url('../fonts/Roboto-Medium.ttf')format('truetype');
+}
+*{ /*police par défaut à toute la page*/
+font-family:'RobotoMedium';
+}
+@keyframes animationslider{ /*tout les navigateur*/
+0% {
+transform: translateX(0%);
+}
+25%{
+transform: translateX(0%);
+}
+50%{
+transform: translateX(-50%);
+}
+75%{
+transform: translateX(-50%);
+}
+100% {
+transform: translateX(-50%);
+}
+}
+@-webkit-keyframes animationslider{ /*Safari, Opera et Chrome*/
+0% {
+transform: translateX(0%);
+}
+25%{
+transform: translateX(0%);
+}
+50%{
+transform: translateX(-50%);
+}
+75%{
+transform: translateX(-50%);
+}
+100% {
+transform: translateX(-50%);
+}
+}
+figure{
+animation: animationslider 10s infinite;
+-webkit-animation:animationslider 10s infinite;/*Safari, Opera et Chrome*/
+animation-timing-function:ease-in;
+animation-direction:alternate;
+}
+#trait_image{
+animation: traitimage 10s infinite;
+-webkit-animation:traitimage 10s infinite;/*Safari, Opera et Chrome*/
+animation-direction:alternate;
+}
+@keyframes traitimage{ /*tout les navigateur*/
+0% {
+width:0%;
+}
+10% {
+width:0%;
+}
+40% {
+width:100%;
+}
+100% {
+width:100%;
+}
+}
+@-webkit-keyframes traitimage{ /*Safari, Opera et Chrome*/
+0% {
+width:0%;
+}
+10% {
+width:0%;
+}
+40% {
+width:100%;
+}
+100% {
+width:100%;
+}
+}
+/***********************************************************************************************************************/
+/*-----------ELEMENTS PAGE------------*/
+/***********************************************************************************************************************/
+body, header,p, h1, h2, h3, ul, li, a{
+margin: 0;
+padding: 0;
+}
+
+#menu-header ul li a{
+font-family:'RobotoMedium', Helvetica, sans-serif;
+font-size: 16px;
+}
+h2{
+font-size: 40px;
+margin-bottom: 10px;
+margin-top: 50px;
+}
+h2[id^="page_"]{  
+padding-top:100px;  
+position:relative;   
+top:-100px;   
+margin-bottom:-100px; 
+}
+
+section[id^="contact"]{  
+padding-top:100px;  
+position:relative;   
+top:-100px;   
+margin-bottom:-100px; 
+}
+
+#corps{ /*marge sur les écran jusqu'a 1600px*/
+max-width: 1600px;
+margin: auto;
+}
+
+/***********************************************************************************************************************/
+/*--------------MENU NAVIGATION-----------*/
+/***********************************************************************************************************************/
+header{
+display:flex;
+justify-content:space-between; /*création d'un espace avec le logo*/
+align-items:center; /*alignement du logo et du menu*/
+position: fixed; /*menu qui suit la navigation*/
+width: 100%;
+height: 100px;
+top:0;
+background-color: white;
+z-index: 1; /*position:; premier au dessus*/
+box-shadow: 2px 2px 2px #4DACD0; /*couleur sous la banière menu*/
+}
+#logo{
+padding-left: 115px;/*décalage gauche de la marge intérieur*/
+}
+#menu-header ul{
+padding-right: 175px; /*espace avec la marge intérieure droite*/
+display: flex;
+flex-direction:row;
+list-style-type: none;
+}
+nav a {
+color:grey;
+text-decoration: none; /*retrait des lignes sous les liens*/
+transition:0.3s; /*effet de montée*/
+}
+nav a:hover /*changement couleur survol du menu*/{
+color:black;
+border-top: 5px solid #4DACD0; /*bordure au survol*/
+padding-top: 35px; /*marge intérieure par rapport au haut de la page*/ /*animation*/
+}
+nav li{
+margin-right: 20px; /*espacement entre le texte du menu et la marge ext de droite*/
+
+}
+/***********************************************************************************************************************/
+/*-----------SECTION SLIDER------------*/
+/***********************************************************************************************************************/
+#slider{
+width: 100%; /*largeur 100%*/
+height: auto; /*hauteur auto car plus facile pour le responsive ensuite*/
+overflow: hidden;/*cacher ce qui dépasse*/
+position: relative;
+margin-top:100px; /*espacement avec marge ext du haut*/
+
+}
+#slider_titre h1{
+font-family:'RobotoBlack', Helvetica, sans-serif;
+font-size: 29px;
+}
+#slider figure{
+width: 200%; /*image affiché occupe 200%*/
+margin: 0; /*centrage*/
+position: relative;
+}
+#slider figure img{
+float: left;
+width: 50%;
+height: auto;
+}
+#slider_titre{
+width: 40%;
+position: absolute;
+padding-left: 115px;
+top: 35%;
+color: white;
+}
+#slider_titre p{
+font-family:'RobotoBlack', Helvetica, sans-serif;
+font-size: 16px;
+color: white;
+}
+#slider_titre span /*titre WebAgency uniquement en bleu*/{
+color: #4DACD0;
+}
+#slider a /*bouton plus d'info*/{
+text-decoration: none;
+color: white;
+background-color:rgb(92,173,211);
+padding: 10px 10px 10px 10px;
+box-shadow: 0px 3px 0px 0px rgb(68,148,187);
+border-radius: 5px; /*finition arrondie*/
+font-family:'RobotoMedium', Helvetica, sans-serif;
+cursor: pointer;
+}
+#slider a:hover{
+background-color:rgb(68,148,187);
+}
+#trait_image /* petit trait bleu sous l'image*/{
+height: 5px;
+width: 110px;
+background-color:#4DADD1;
+bottom: 0px;
+position: absolute;
+}
+/*--------------FLECHES SLIDER---------------*/
+#fleche{
+width: 100%;
+position: absolute;
+text-align: center;
+color: white;
+font-size: 2em;
+display: flex;
+justify-content: space-between;
+top: 50%;
+margin-top: -30px;
+pointer-events:none;
+}
+.fa.fa-angle-right:hover{
+background-color:rgba(0, 0, 0, 0.6);
+}
+.fa.fa-angle-left:hover{
+background-color:rgba(0, 0, 0, 0.6);
+}
+
+.fa.fa-angle-right{
+background-color:rgba(0, 0, 0, 0.3); /*gris avec transparence*/
+position: relative;
+width: 60px;
+height: 60px;
+border-radius: 60px;
+line-height: 60px;
+right: -30px;
+pointer-events: initial;
+cursor: pointer;
+}
+.fa.fa-angle-left{
+background-color:rgba(0, 0, 0, 0.3); /*gris avec transparence*/
+position: relative;
+width: 60px;
+height: 60px;
+border-radius: 60px;
+line-height: 60px;
+left: -30px;
+pointer-events:initial;
+cursor: pointer;
+}
+.fa.fa-angle-left::before{
+margin-right: -20px;
+}
+.fa.fa-angle-right::before{
+margin-left: -20px;
+}
+
+/***********************************************************************************************************************/
+/*--TITRE DES SECTIONS ET SEPARATEURS--*/
+/***********************************************************************************************************************/
+.titre {
+text-align: center;
+padding-top: 15px;
+font-family: 'RobotoMedium', Helvetica, sans-serif;
+font-size: 16px;
+}
+.separateur{
+height: 35px;
+width: 150px;
+margin-right: auto;
+margin-left:auto;
+
+}
+.rond{
+border-radius: 50%;
+border:2px solid white; /*petite bordure blanche autour du cercle*/
+position: relative; /*position relative pour la superposition avec le trait*/
+width: 16px;/*dimension du cercle*/
+height: 16px;
+margin:auto; /*centrage du rond*/
+background-color: #4DADD1;
+}
+.trait{
+width: 150px; /*longeur du trait*/
+height: 1px; /*hauteur du trait*/
+margin-top: 9px; /*rayon de 16+2 de bordure blanche*/
+background-color: #cecece; /*couleur arriére-plan*/
+position: absolute; /*position absolute pour la superposition avec le rond*/
+}
+.titre p{
+text-align: center;
+width: 600px;
+margin: auto;
+display: block;
+color:rgb(125,125,125);
+}
+/***********************************************************************************************************************/
+/*-----SECTION SERVICES------*/
+/***********************************************************************************************************************/
+#services{
+margin-bottom:90px;
+}
+#presentation{
+display: flex;
+flex-direction: column; /*titres les uns en dessous des autres*/
+margin-top: 140px;
+width: 45%;
+font-family:'RobotoMedium', Helvetica, sans-serif;
+font-size: 16px;
+}
+#ecran{
+margin-top: 80px;
+}
+.flex{
+display: flex; /*flex pour l'ecran et la présentation*/
+}
+.col3>div{
+width: 50%; /*partage de moitié*/
+}
+#ecran img{
+width: auto;
+height: auto;
+margin: auto;
+display: block;
+}
+.titre_3 p{
+text-align: left; /*aligmement du texte à gauche*/
+font-family:'RobotoMedium', Helvetica, sans-serif;
+font-size:16px;
+color:rgb(125,125,125);
+padding-bottom: 5px;
+}
+.titre_3{
+padding-left: 15px;
+}
+.fas.fa-chart-line, .fas.fa-cubes, .fas.fa-chart-pie{
+color:#4DADD1; /*couleur des icones*/
+}
+
+.fas.fa-circle{
+top: 25px; /*positionnnement sur le demi-cercle*/
+border-radius: 50%;
+border:2px solid white; /*petite bordure blanche autour du cercle*/
+position: absolute;
+width: 15px;/*dimension du cercle*/
+height: 15px;
+margin-left: 40px;
+background-color: #4DADD1;
+}
+.icone{
+position: relative;
+display: inline-block;
+border:1px solid rgba(185,185,185,.7);
+border-radius: 50%;
+padding: 15px;
+width: 35px;
+height: 35px;
+display: flex;
+}
+.icone span{
+color:#4DADD1;
+}
+.icone:hover{ /*petit halo stylé*/
+box-shadow: 0 0 5px rgba(92,173,211,0.5);
+}
+.serv{
+display: flex;
+padding-bottom: 50px;
+}
+/***********************************************************************************************************************/
+/*--------SECTION PROJETS--------*/
+/***********************************************************************************************************************/
+#projets{
+background-color: #f5f5f5;
+}
+#menu_portfolio{
+display: flex;
+justify-content:center;
+margin: 40px 0px 40px 0px;
+font-family:'RobotoMedium', Helvetica, sans-serif;
+font-size: 16px;
+color: rgb(105,105,105);
+}
+#menu_portfolio ul{
+background-color: #e5e5e5;
+padding: 5px 0px 20px 0px;
+list-style-type: none;
+border-radius: 5px;
+}
+#menu_portfolio li{
+display: inline;
+padding: 16px 0px 15px 15px;
+/*pas de transition pour plus de fluidité dans l'animation du menu*/
+}
+#menu_portfolio li:hover{
+background-color:#4DADD1;
+color: white; /*couleur texte au passage*/
+border-bottom: 5px solid rgb(68,148,187);
+}
+#menu_portfolio li:nth-child(1):hover{ /*ciblage élément 1 pour ajout bordure arrondie*/
+border-radius: 5px 0px 0px 5px;
+}
+#menu_portfolio li:nth-child(4):hover{ /*ciblage élément 4 pour ajout bordure arrondie*/
+border-radius: 0px 5px 5px 0px;
+}
+#menu_portfolio li .fa.fa-caret-down /*icones petits triangles sous menu*/{
+opacity: 0;
+font-size: 30px;
+position: relative;
+top: 38px;
+right: 37px;
+color: rgb(68,148,187);
+}
+#menu_portfolio li:hover .fa.fa-caret-down{ /*opacité petits triangles sous le menu*/
+opacity: 1;
+}
+/*------PORTFOLIO--------*/
+#portfolio{
+display: flex;
+flex-wrap:wrap; /*positionnement pour portfoliot*/
+padding-bottom: 50px;
+}
+#portfolio>div{ /*parents portfolio dit marge auto aux div enfants*/
+margin: auto; /*facilitera le responsive*/
+}
+#portfolio img{
+width: 280px;/*espacement horizontal entre les images*/
+}
+.item{
+overflow: hidden; /*texte depasse caché*/
+height: 190px;	/*hauteur entre les images*/
+padding-top: 35px; /*espace vertical entre les images*/
+cursor: pointer;
+}
+.item:hover .description{
+top:-65px; /*hauteur bannière transparente vis a vis de l'image*/
+}
+.description{
+position: relative;
+background-color:rgba(0, 0, 0, 0.5);
+bottom:-22px; /*masquage de la description vers le bas*/
+height: 55px;/*hauteur de la bande translucide*/
+padding-top: 5px; /*décalage du texte vers le bas*/
+}
+.description p{
+color:white;
+margin:0;
+margin-left: 10px;
+font-family:'RobotoMedium', Helvetica, sans-serif;
+font-size: 16px;
+margin-top: -20px;
+}
+.description h4{
+color: white;
+font-weight: bold;
+font-size: 20px;
+margin-left: 10px;
+margin-top: 0;
+}
+.eye{
+padding: 10px;
+border-radius: 50%;
+border: 2px solid white; /*petite bordure blanche autour de l'oeil*/
+color:white;
+background-color:#4DADD1;
+position: relative;
+float:right;
+bottom: 75px; /*hauteur de l'oeil*/
+right: 10px;
+height: 32%;
+}
+/***********************************************************************************************************************/
+/*--------CARTE ET FORMULAIRE---------*/
+/***********************************************************************************************************************/
+#contact{
+position: relative; /*superpostion du formulaire*/
+width: 100%;
+}
+#formulaire{
+background-color:rgba(255,255,255,0.8);
+padding: 15px 15px 15px 15px;
+width: 255px;
+height: 480px; /*hauteur*/
+top: 135px;
+right: 100px;
+position: absolute;
+border-radius:5px;
+}
+#formulaire span{
+font-weight: bold;
+line-height: 1.5;
+font-family:'RobotoMedium', Helvetica, sans-serif;
+font-size: 12px;
+}
+#formulaire p{
+line-height: 1.5;
+font-family:'RobotoMedium', Helvetica, sans-serif;
+font-size: 12px;
+margin-top:2px;
+padding-bottom: 10px;
+color: rgb(125,125,125);
+}
+input{
+padding: 5px 10px 5px 10px; /*epaisseur de la case*/
+border: 1px;
+border-radius: 3px;
+box-shadow: 0px 0px 2px 0px rgb(150,150,150);
+margin-left: 10px;
+width: 220px;
+outline: none;
+}
+input[type="submit"]{
+text-decoration: none;
+padding: 10px 10px 10px 10px;
+width: 100px;
+border: none;
+border-radius: 3px;
+background-color: rgb(92,173,211);
+color: white;
+box-shadow: 0px 3px 0px 0px rgb(68,148,187);
+margin-top: 12px;
+cursor: pointer;
+-webkit-appearance:none; /*annulation de la modif du bouton sur IOS*/
+}
+input[type="submit"]:hover{
+background-color:rgb(68,148,187);
+}
+textarea{
+padding: 5px 10px 5px 10px;
+width: 220px;
+margin-left: 10px;
+border:1px;
+border-radius: 3px;
+box-shadow: 0px 0px 2px 0px rgb(150,150,150);
+}
+iframe{
+width: 100%;
+height: 100%;
+opacity: 0.7;
+border:none;
+}
+#carte_google{
+height: 600px;
+background-color:#92C7EE;
+overflow: hidden;
+}
+/***********************************************************************************************************************/
+/*FOOTER*/
+/***********************************************************************************************************************/
+#bas_page{
+display: flex;
+margin:auto;
+}
+#qui{
+margin-right: 20px;
+line-height: 2em;
+font-size: 20px;
+cursor: pointer;
+}
+#qui p:hover{
+color:#31A1C0; /*coloration passant sur les p*/
+}
+#logo_sociaux{
+font-size: 60px;
+color: grey;
+margin-top:auto;
+cursor: pointer;
+}
+#logo_sociaux .fab:hover{
+color:rgb(68,148,187);
+}
+
+footer p{
+
+margin: 0;
+}
+footer em{
+color: grey;
+font-size: 12px;
+margin-bottom: 5px;
+}
+footer{
+display: flex;
+flex-direction:column;
+background-color:#f5f5f5;
+font-family:'RobotoMedium', Helvetica, sans-serif;
+color: #92C7EE;
+align-items:center;
+height: 200px;
+width: 100%;
+max-width: 1600px;
+font-size: 15px;
+}
+/*-----------------------------responsive--------------------------------*//*-----------------------------responsive--------------------------------*/
+@media all and (max-width: 960px){
+/* HEADER */
+header{
+
+flex-direction: column;
+height: 110px;
+align-items:center;
+}
+#logo{
+padding: 0;
+margin-top:15px;
+}
+
+#menu-header {
+padding-left:155px;
+margin-bottom: 10px;
+}
+nav a:hover{
+border-top:1px solid #4DACD0;
+padding-top: 2px;
+}
+#menu-header ul{
+width: 445px;
+padding-left: 40px;
+padding-right: 40px;
+}
+figure{
+animation: animationslider none; /*plus d'animation*/
+}
+#trait_image{
+animation: traitimage none;
+}
+#slider{
+overflow: visible;
+padding-top: 1px;
+}
+
+#slider_titre{
+top: 0;
+width: 80%;
+padding-left: 0;
+margin: auto;
+text-align: center;
+position: relative;
+}
+#slider_titre h1{
+font-size: 25px;
+color: grey;
+margin-top: 40px;
+}
+
+#slider_titre p {
+font-size: 15px;
+color: grey;
+}
+
+#slider_titre a {
+font-size: 12px;
+padding: 10px;
+margin-top: 0px;
+}
+#slider img{
+display: none;
+}
+#fleche{
+display: none;
+}
+#trait_image{
+display: none;
+}
+/*TITRES*/
+.titre h2{
+font-size: 35px;
+}
+h2{
+margin-top: 50px;
+}
+.titre p{
+width: 70%;
+font-size: 17px;
+}
+/* SERVICES */
+#ecran{
+margin-top:10px;
+}
+#ecran img{
+width: 100%;
+}
+.flex{
+display: flex;
+flex-direction:column; /*les uns en dessous des autres*/
+text-align: center; /*texte au centre*/
+}
+.col3>div{
+width: 100%;
+}
+#presentation{
+width: 80%;
+text-align: left;
+margin: auto;
+}
+/*PROJETS*/
+#menu_portfolio{
+margin: 10px;
+height: 60px;
+}
+#menu_portfolio ul{
+margin:10px 0px 0px 0px;
+padding: 0;
+font-size: 12px;
+display: flex;
+}
+#menu_portfolio li{
+padding: 15px 10px 15px 10px;
+display: inline-block;
+}
+#menu_portfolio li .fa.fa-caret-down{
+right:-20px;
+top:5px;
+}
+/* CONTACT */
+#carte_google{
+overflow: hidden;
+position: relative;
+height: 200px;
+border: 1px solid black;
+margin-right: 1px;
+margin-left: 1px;
+border:none;
+}
+#formulaire {
+margin-left: auto;
+margin-right: auto;
+padding: 0;
+width: 100%;
+max-width: 1600px;
+height: 470px;
+top: 50px;
+position: static;
+display: flex;
+flex-direction:column;
+background-color: rgb(220,220,220);
+text-align: center;
+}
+#formulaire p{
+padding-bottom: 5px;
+}
+#formulaire input{
+margin: 5px 25px;
+}
+
+#formulaire input[type="submit"] {
+margin:  auto;
+}
+textarea{
+margin:5px 25px;
+
+}
+/*FOOTER*/
+footer{
+text-align: center;
+font-size: 10px;
+}
+#qui{
+margin-right: 0;
+}
+#bas_page{
+display: flex;
+flex-direction:column;
+}
+}
